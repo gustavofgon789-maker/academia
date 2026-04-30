@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg-950 font-sans text-white;
+    background: #050505;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-accent text-white;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full px-4 sm:px-6 lg:px-8;
+    max-width: 1380px;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-accent-700 hover:shadow-glow active:scale-95 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-border-light bg-transparent px-5 py-3 text-sm font-semibold text-white transition-all hover:border-white/30 hover:bg-white/5 active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-white/80 transition-all hover:bg-white/5 hover:text-white;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-border bg-bg-800 px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-all focus:border-accent focus:ring-2 focus:ring-accent/30;
+  }
+
+  .label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-white/60;
+  }
+
+  .card {
+    @apply rounded-xl border border-border bg-bg-800 shadow-card transition-all;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-semibold;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden bg-bg-700;
+  }
+
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/5 to-transparent;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    scrollbar-width: none;
+  }
+}

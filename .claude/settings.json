@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -X POST http://localhost:3333/api/auth/login -H \"Content-Type: application/json\" -d '{\"email\":\"admin@gelveiculos.com\",\"password\":\"admin123\"}')",
+      "Bash(npx tsc *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/)",
+      "Bash(curl -s http://localhost:3333/api/vehicles)"
+    ]
+  }
+}
